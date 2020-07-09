@@ -20,7 +20,7 @@ SELECT last_name FROM employees WHERE last_name LIKE '%q%' AND last_name NOT LIK
 #Add a COUNT() to your results and use ORDER BY to make it easier to find employees whose unusual name is shared with others.
 SELECT last_name, COUNT(*) FROM employees WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%'
 GROUP BY last_name
-ORDER BY last_name;
+ORDER BY COUNT(*) DESC;
 
 #Update your query for 'Irena', 'Vidya', or 'Maya'. Use count(*) and GROUP BY to find the number of employees for each gender with those names
 SELECT gender, COUNT(*) FROM employees WHERE first_name IN ('Irena','Vidya','Maya')
